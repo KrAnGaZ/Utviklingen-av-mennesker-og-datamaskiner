@@ -13,9 +13,10 @@
             color: white;
         }
 
-        .container {
+        /* TOPP DEL */
+        .top-section {
             display: flex;
-            min-height: 100vh;
+            height: 100vh;
         }
 
         .side {
@@ -24,7 +25,7 @@
 
         .side img {
             width: 100%;
-            height: 100vh;
+            height: 100%;
             object-fit: cover;
         }
 
@@ -32,28 +33,44 @@
             width: 50%;
             padding: 40px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 32px;
         }
 
         p {
             font-size: 18px;
             line-height: 1.6;
-            margin-bottom: 20px;
+        }
+
+        /* SCROLL DEL */
+        .gallery {
+            padding: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 30px auto;
+            border-radius: 10px;
         }
 
         .footer {
-            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
             font-style: italic;
-            font-size: 16px;
         }
 
+        /* Mobil */
         @media (max-width: 800px) {
-            .container {
+            .top-section {
                 flex-direction: column;
+                height: auto;
             }
 
             .side, .content {
@@ -61,18 +78,19 @@
             }
 
             .side img {
-                height: auto;
+                height: 250px;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<!-- TOPP -->
+<div class="top-section">
 
     <!-- Venstre bilde -->
     <div class="side">
-        <img src="IMG_4280.jpeg" alt="Graf venstre">
+        <img src="IMG_4280.jpeg" alt="Venstre bilde">
     </div>
 
     <!-- Midt tekst -->
@@ -80,26 +98,13 @@
         <h1>Utvikling av mennesker og datamaskiner</h1>
 
         <p>
-            Denne grafen viser forskjellen mellom biologisk og teknologisk utvikling.
-            Mennesker utvikler seg gjennom evolusjon, som tar millioner av år.
+            Denne grafen viser hvordan mennesker utvikler seg sakte over millioner av år,
+            mens datamaskiner utvikler seg ekstremt raskt.
         </p>
 
         <p>
-            På x-aksen representerer 1 enhet 1 000 000 år for mennesker.
-            Dette viser hvor langsom utviklingen av menneskelig intelligens er.
-        </p>
-
-        <p>
-            Datamaskiner måles i gigaflops på y-aksen, som betyr milliarder av beregninger per sekund.
-            Teknologisk utvikling skjer eksponentielt, noe som gjør at datakraft øker ekstremt raskt.
-        </p>
-
-        <p>
-            I dag har kunstig intelligens nådd et nivå hvor den kan utføre oppgaver raskere og mer effektivt enn mennesker på flere områder.
-        </p>
-
-        <p>
-            Dette viser tydelig kontrasten mellom langsom biologisk utvikling og rask teknologisk vekst.
+            Datakraft måles i gigaflops, og utviklingen er eksponentiell.
+            Dette betyr at kunstig intelligens raskt nærmer seg menneskelig nivå.
         </p>
 
         <div class="footer">
@@ -109,9 +114,15 @@
 
     <!-- Høyre bilde -->
     <div class="side">
-        <img src="IMG_4280.jpeg" alt="Graf høyre">
+        <img src="bilde.jpg" alt="Høyre bilde">
     </div>
 
+</div>
+
+<!-- SCROLL NED -->
+<div class="gallery">
+    <img src="IMG_4280.jpeg">
+    <img src="bilde.jpg">
 </div>
 
 </body>
