@@ -3,77 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utvikling av Mennesker og Datamaskiner</title>
+    <title>Utvikling av mennesker og datamaskiner</title>
+
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #111;
+            color: white;
         }
 
         .container {
-            max-width: 1000px;
-            margin: 20px;
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            min-height: 100vh;
         }
 
-        img {
+        .side {
+            width: 25%;
+        }
+
+        .side img {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        .content {
+            width: 50%;
+            padding: 40px;
+            text-align: center;
         }
 
         h1 {
-            margin-top: 20px;
+            font-size: 36px;
+            margin-bottom: 20px;
         }
 
         p {
             font-size: 18px;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         .footer {
-            margin-top: 30px;
+            margin-top: 40px;
             font-style: italic;
             font-size: 16px;
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .side, .content {
+                width: 100%;
+            }
+
+            .side img {
+                height: auto;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <img src="IMG_4280.jpeg"> alt="Utvikling av mennesker og datamaskiner">
+<div class="container">
 
+    <!-- Venstre bilde -->
+    <div class="side">
+        <img src="IMG_4280.jpeg" alt="Graf venstre">
+    </div>
+
+    <!-- Midt tekst -->
+    <div class="content">
         <h1>Utvikling av mennesker og datamaskiner</h1>
 
         <p>
-            Dette bildet viser utviklingen av både mennesker og datamaskiner over tid.
-            På x-aksen måles tid for mennesker der 1 enhet tilsvarer 1 000 000 år.
-            På y-aksen måles datakraft i gigaflops (1 gigaflop = 1 milliard operasjoner per sekund).
+            Denne grafen viser forskjellen mellom biologisk og teknologisk utvikling.
+            Mennesker utvikler seg gjennom evolusjon, som tar millioner av år.
         </p>
 
         <p>
-            Grafen illustrerer hvordan menneskelig utvikling har vært relativt langsom og jevn,
-            mens utviklingen av datamaskiner har vært ekstremt rask og eksponentiell.
-            Den bratte kurven viser hvordan datakraften øker dramatisk over kort tid.
+            På x-aksen representerer 1 enhet 1 000 000 år for mennesker.
+            Dette viser hvor langsom utviklingen av menneskelig intelligens er.
         </p>
 
         <p>
-            Dette gir en indikasjon på at kunstig intelligens allerede har oppnådd en
-            datakapasitet som kan konkurrere med, og potensielt overgå, menneskelig intelligens.
+            Datamaskiner måles i gigaflops på y-aksen, som betyr milliarder av beregninger per sekund.
+            Teknologisk utvikling skjer eksponentielt, noe som gjør at datakraft øker ekstremt raskt.
+        </p>
+
+        <p>
+            I dag har kunstig intelligens nådd et nivå hvor den kan utføre oppgaver raskere og mer effektivt enn mennesker på flere områder.
+        </p>
+
+        <p>
+            Dette viser tydelig kontrasten mellom langsom biologisk utvikling og rask teknologisk vekst.
         </p>
 
         <div class="footer">
             forskning utført av Alexander Von Zernichow Sponheim og Jonathan Myrberg
         </div>
     </div>
+
+    <!-- Høyre bilde -->
+    <div class="side">
+        <img src="IMG_4280.jpeg" alt="Graf høyre">
+    </div>
+
+</div>
 
 </body>
 </html>
