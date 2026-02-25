@@ -11,126 +11,118 @@
             font-family: Arial, sans-serif;
             background-color: #111;
             color: white;
+            line-height: 1.6;
         }
 
-        /* TOPP DEL */
-        .top-section {
-            display: flex;
-            height: 100vh;
-        }
-
-        .side {
-            width: 25%;
-        }
-
-        .side img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .content {
-            width: 50%;
-            padding: 40px;
+        .section {
+            padding: 60px 20px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        }
+
+        img {
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            margin-top: 20px;
         }
 
         h1 {
-            font-size: 32px;
+            font-size: 36px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            font-size: 28px;
         }
 
         p {
             font-size: 18px;
-            line-height: 1.6;
-        }
-
-        /* SCROLL DEL */
-        .gallery {
-            padding: 40px;
-        }
-
-        .gallery img {
-            width: 100%;
             max-width: 800px;
-            display: block;
-            margin: 30px auto;
-            border-radius: 10px;
+            margin: 20px auto;
         }
 
         .footer {
-            text-align: center;
-            padding: 20px;
+            margin-top: 50px;
             font-style: italic;
-        }
-
-        /* Mobil */
-        @media (max-width: 800px) {
-            .top-section {
-                flex-direction: column;
-                height: auto;
-            }
-
-            .side, .content {
-                width: 100%;
-            }
-
-            .side img {
-                height: 250px;
-            }
         }
     </style>
 </head>
 <body>
 
-<!-- TOPP -->
-<div class="top-section">
+<!-- INTRO -->
+<div class="section">
+    <h1>Utviklingen av mennesker og datamaskiner</h1>
 
-    <!-- Venstre bilde -->
-    <div class="side">
-        <img src="IMG_4280.jpeg" alt="Venstre bilde">
-    </div>
+    <p>
+        Utviklingen av intelligens har skjedd på to helt forskjellige måter:
+        biologisk gjennom evolusjon, og teknologisk gjennom datamaskiner.
+    </p>
 
-    <!-- Midt tekst -->
-    <div class="content">
-        <h1>Utvikling av mennesker og datamaskiner</h1>
-
-        <p>
-            Denne grafen viser hvordan mennesker utvikler seg,
-            iforhel til hvordan datamaskiner har utviklt seg.
-        </p>
-
-        <p>
-            Datakraft måles i gigaflops, og utviklingen er eksponentiell.
-            Dette betyr at kunstig intelligens raskt nærmer seg menneskelig nivå.
-        </p>
-        
-    </div>
-    </div>
-    </br> 
-
- <!-- SCROLL NED1 -->
-    <div class="gallery">
-        <img src="bilde.jpg" alt="første nede bildet">
+    <p>
+        Det er viktig å merke seg at menneskelig utvikling ikke starter fra det første mennesket,
+        men fra pattedyrene, som gradvis utviklet seg over millioner av år.
+    </p>
 </div>
-</br>
-      Denne grafen viser hvordan mennesker utvikler seg,
-            iforhel til hvordan datamaskiner har utviklt seg.
-    </br> 
+
+<!-- MENNESKER -->
+<div class="section">
+    <h2>Menneskelig utvikling</h2>
+
+    <img src="menneske.png" alt="Utvikling av mennesker">
+
+    <p>
+        Denne grafen viser utviklingen av intelligens hos mennesker over svært lang tid.
+        X-aksen representerer millioner av år, hvor 1 enhet tilsvarer 1 000 000 år.
+    </p>
+
+    <p>
+        Kurven er relativt flat, noe som viser at utviklingen skjer sakte og gradvis.
+        Dette skyldes biologisk evolusjon, som tar ekstremt lang tid.
+    </p>
 </div>
-<!-- SCROLL NED -->
-<div class="gallery">
-    <img src="IMG_4280.jpeg">
-    <img src="bilde.jpg">
- </div> 
- </br> 
-    vis man setter de oppå hvarandre så ener man opp med dette
- </div>
-</br></br>  
+
+<!-- DATAMASKINER -->
+<div class="section">
+    <h2>Utvikling av datamaskiner</h2>
+
+    <img src="maskin.png" alt="Utvikling av datamaskiner">
+
+    <p>
+        Denne grafen viser utviklingen av datakraft over tid.
+        Y-aksen måles i gigaflops, som betyr milliarder av beregninger per sekund.
+    </p>
+
+    <p>
+        Her ser vi en eksponentiell vekst, hvor utviklingen går ekstremt raskt.
+        På kort tid øker datakraften dramatisk sammenlignet med biologisk utvikling.
+    </p>
+</div>
+
+<!-- SAMMENLIGNING -->
+<div class="section">
+    <h2>Sammenligning</h2>
+
+    <img src="sammenligning.png" alt="Sammenligning">
+
+    <p>
+        I denne grafen ser vi en direkte sammenligning mellom mennesker og datamaskiner.
+        Den blå linjen representerer menneskelig utvikling, mens den røde linjen representerer datamaskiner.
+    </p>
+
+    <p>
+        Den blå kurven er relativt flat, noe som viser langsom utvikling over millioner av år.
+        Den røde kurven stiger bratt, noe som viser eksponentiell vekst i datakraft.
+    </p>
+
+    <p>
+        Dette viser at kunstig intelligens allerede har nådd et nivå hvor den kan konkurrere med,
+        og på enkelte områder overgå, menneskelig kapasitet.
+    </p>
+
     <div class="footer">
-            forskning utført av Alexander Von Zernichow Sponheim og Jonathan Myrberg
+        forskning utført av Alexander Von Zernichow Sponheim og Jonathan Myrberg
+    </div>
+</div>
 
 </body>
 </html>
