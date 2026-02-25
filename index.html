@@ -1,144 +1,97 @@
-<!DOCTYPE html>
+<div class="navbar">
+  <a href="#hjem">Hjem</a>
+  <a href="#skaper">Om skaper</a>
+  <a href="#forskning">Forskningsside</a>
+</div>
+
+<section id="hjem">
+  <h1>Velkommen til forskningens verden</h1>
+</section>
+
+<section id="skaper">
+  <h1>Skapere</h1>
+</section>
+
+<section id="forskning">
+  <!-- LIM INN DIN GAMLE KODE HER -->
+    <!DOCTYPE html>
 <html lang="no">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utvikling av Mennesker og Datamaskiner</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-<title>Forskning</title>
+        .container {
+            max-width: 1000px;
+            margin: 20px;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #111;
-    color: white;
-}
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
 
-/* NAVBAR */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: black;
-    padding: 15px;
-    text-align: center;
-    z-index: 1000;
-}
+        h1 {
+            margin-top: 20px;
+        }
 
-.navbar a {
-    color: white;
-    margin: 0 20px;
-    text-decoration: none;
-    cursor: pointer;
-}
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
 
-/* SEKSJONER */
-.section {
-    display: none;
-    padding-top: 80px;
-    min-height: 100vh;
-}
-
-.active {
-    display: block;
-}
-
-/* HJEM */
-.home {
-    background-image: url("IMG_4280.jpeg");
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-}
-
-.home h1 {
-    margin-top: 200px;
-    font-size: 50px;
-}
-
-/* FORSKNING */
-.research {
-    text-align: center;
-    padding: 40px;
-}
-
-.research img {
-    width: 90%;
-    max-width: 800px;
-    margin: 20px 0;
-    border-radius: 10px;
-}
-
-/* SKAPERE */
-.creators {
-    text-align: center;
-    padding: 40px;
-}
-
-</style>
-
-<script>
-function showPage(id) {
-    document.querySelectorAll(".section").forEach(sec => {
-        sec.classList.remove("active");
-    });
-    document.getElementById(id).classList.add("active");
-}
-</script>
-
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <a onclick="showPage('home')">Hjem</a>
-    <a onclick="showPage('creators')">Om skapere</a>
-    <a onclick="showPage('research')">Forskningsside</a>
-</div>
+    <div class="container">
+        <img src="IMG_4280.jpeg"> alt="Utvikling av mennesker og datamaskiner">
 
-<!-- HJEM -->
-<div id="home" class="section home active">
-    <h1>Velkommen til forsknings verden</h1>
-    <p>Her kan du skrive intro.</p>
-</div>
+        <h1>Utvikling av mennesker og datamaskiner</h1>
 
-<!-- SKAPERE -->
-<div id="creators" class="section creators">
-    <h1>Skapere</h1>
-    <p>Alexander Von Zernichow Sponheim</p>
-    <p>Jonathan Myrberg</p>
-</div>
+        <p>
+            Dette bildet viser utviklingen av både mennesker og datamaskiner over tid.
+            På x-aksen måles tid for mennesker der 1 enhet tilsvarer 1 000 000 år.
+            På y-aksen måles datakraft i gigaflops (1 gigaflop = 1 milliard operasjoner per sekund).
+        </p>
 
-<!-- FORSKNING (DIN SIDE TILBAKE) -->
-<div id="research" class="section research">
+        <p>
+            Grafen illustrerer hvordan menneskelig utvikling har vært relativt langsom og jevn,
+            mens utviklingen av datamaskiner har vært ekstremt rask og eksponentiell.
+            Den bratte kurven viser hvordan datakraften øker dramatisk over kort tid.
+        </p>
 
-    <h1>Utvikling av mennesker og datamaskiner</h1>
+        <p>
+            Dette gir en indikasjon på at kunstig intelligens allerede har oppnådd en
+            datakapasitet som kan konkurrere med, og potensielt overgå, menneskelig intelligens.
+        </p>
 
-    <p>
-        Denne grafen viser forskjellen mellom biologisk og teknologisk utvikling.
-    </p>
-
-    <!-- BILDE -->
-    <img src="IMG_4280.jpeg">
-
-    <p>
-        Den blå grafen representerer menneskelig utvikling fra pattedyr over millioner av år.
-        Den røde grafen representerer datamaskiner og deres eksponentielle vekst.
-    </p>
-
-    <p>
-        Datamaskiner utvikler seg ekstremt raskt sammenlignet med mennesker.
-    </p>
-
-    <p>
-        Dette viser at kunstig intelligens allerede kan konkurrere med mennesker på flere områder.
-    </p>
-
-    <p style="margin-top:40px; font-style:italic;">
-        forskning utført av Alexander Von Zernichow Sponheim og Jonathan Myrberg
-    </p>
-
-</div>
+        <div class="footer">
+            forskning utført av Alexander Von Zernichow Sponheim og Jonathan Myrberg
+        </div>
+    </div>
 
 </body>
 </html>
+
+</section>
