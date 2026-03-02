@@ -2,10 +2,130 @@
 <html lang="no">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Utvikling av mennesker og datamaskiner</title>
+<title>Forsknings Verden</title>
  
-    <style>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+ 
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: black;
+    padding: 15px;
+    text-align: center;
+}
+ 
+.navbar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+ 
+.navbar a:hover {
+    text-decoration: underline;
+}
+ 
+/* DROPDOWN */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+ 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: black;
+    top: 100%;
+    left: 0;
+    min-width: 120px;
+ 
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 0.3s;
+}
+ 
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+}
+ 
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+ 
+/* SEKSJONER */
+.section {
+    display: none;
+    padding-top: 80px;
+    min-height: 100vh;
+    text-align: center;
+}
+ 
+.active {
+    display: block;
+}
+ 
+/* EKSTRA */
+.hero {
+    height: 100vh;
+    background-image: url("bildet.jpg"); /* 👈 BYTT TIL DITT BILDE */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+</style>
+</head>
+ 
+<body>
+ 
+<!-- NAVBAR -->
+<div class="navbar">
+    <a onclick="showPage('home')">Hjem</a>
+    <a onclick="showPage('about')">Om skaperne</a>
+    <a onclick="showPage('research')">Forskningsside</a>
+ 
+    <div class="dropdown">
+        <a id="languageButton" onclick="toggleDropdown()">Språk</a>
+        <div class="dropdown-content" id="languageMenu">
+            <a onclick="setLanguage('no')">Norsk</a>
+            <a onclick="setLanguage('en')">English</a>
+        </div>
+    </div>
+</div>
+ 
+<!-- HJEM -->
+<div id="home" class="section active">
+    <div class="hero">
+        Velkommen til forsknings verden
+    </div>
+ 
+    <h2>Her kan du skrive tekst 👇</h2>
+    <p>Dette er stedet du kan legge inn hva du vil.</p>
+</div>
+ 
+<!-- OM SKAPERNE -->
+<div id="about" class="section">
+    <h1>Skaperne</h1>
+    <p>Skriv om deg selv her.</p>
+</div>
+ 
+<!-- FORSKNING -->
+<div id="research" class="section">
+    <h1>Utvikling av mennesker og datamaskiner</h1>
+    <p><style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -122,7 +242,42 @@
     <div class="footer">
         forskning utført av Alexander Von Zernichow Sponheim og Jonathan Myrberg
 </div>
+</div></p>
 </div>
+ 
+<script>
+function showPage(pageId) {
+    let sections = document.querySelectorAll(".section");
+    sections.forEach(sec => sec.classList.remove("active"));
+ 
+    document.getElementById(pageId).classList.add("active");
+}
+ 
+function toggleDropdown() {
+    document.getElementById("languageMenu").classList.toggle("show");
+}
+ 
+document.addEventListener("click", function(event) {
+    let menu = document.getElementById("languageMenu");
+    let button = document.getElementById("languageButton");
+ 
+    if (!button.contains(event.target) && !menu.contains(event.target)) {
+        menu.classList.remove("show");
+    }
+});
+ 
+function setLanguage(lang) {
+    if (lang === "no") {
+        alert("Norsk valgt");
+    }
+ 
+    if (lang === "en") {
+        alert("English selected");
+    }
+ 
+    document.getElementById("languageMenu").classList.remove("show");
+}
+</script>
  
 </body>
 </html>
