@@ -2,7 +2,9 @@
 <html lang="no">
 <head>
 <meta charset="UTF-8">
-<title>Forsknings Verden</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forskning</title>
 
 <style>
 body {
@@ -18,6 +20,7 @@ body {
     background: black;
     padding: 15px;
     text-align: center;
+    z-index: 1000;
 }
 
 .navbar a {
@@ -39,40 +42,34 @@ body {
 }
 
 .dropdown-content {
-    display: none;
     position: absolute;
     background: black;
-    top: 100%;
+    top: 100%; /* 👈 viktig! starter rett under knappen */
     left: 0;
     min-width: 120px;
 
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-10px);
     transition: 0.3s;
-}
 
+    z-index: 9999; /* 👈 sørger for at den ligger oppå */
+}
 .dropdown-content a {
     display: block;
     padding: 10px;
 }
 
-.dropdown-content.show {
-    display: block;
+/* VIS MENY */
+.dropdown.active .dropdown-content {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
 }
 
 /* SEKSJONER */
 .section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.5s;
-
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-
+    display: none;
     padding-top: 80px;
     min-height: 100vh;
     text-align: center;
@@ -80,64 +77,17 @@ body {
 
 /* AKTIV SIDE */
 .active {
-    opacity: 1;
-    transform: translateY(0);
-    position: relative;
+    display: block;
 }
 
-/* EKSTRA */
-.hero {
-    height: 100vh;
-    background-image: url("bildet.jpg"); /* 👈 BYTT TIL DITT BILDE */
+/* HJEM */
+.home {
+    background-image: url("bilde.jpg"); /* BYTT TIL DITT BILDE */
     background-size: cover;
     background-position: center;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
 }
 </style>
-</head>
-
-<body>
-
-<!-- NAVBAR -->
-<div class="navbar">
-    <a onclick="showPage('home')">Hjem</a>
-    <a onclick="showPage('about')">Om skaperne</a>
-    <a onclick="showPage('research')">Forskningsside</a>
-
-    <div class="dropdown">
-        <a id="languageButton" onclick="toggleDropdown()">Språk</a>
-        <div class="dropdown-content" id="languageMenu">
-            <a onclick="setLanguage('no')">Norsk</a>
-            <a onclick="setLanguage('en')">English</a>
-        </div>
-    </div>
-</div>
-
-<!-- HJEM -->
-<div id="home" class="section active">
-    <div class="hero">
-        Velkommen til forsknings verden
-    </div>
-
-    <h2>Her kan du skrive tekst 👇</h2>
-    <p>Dette er stedet du kan legge inn hva du vil.</p>
-</div>
-
-<!-- OM SKAPERNE -->
-<div id="about" class="section">
-    <h1>Skaperne</h1>
-    <p>Skriv om deg selv her.</p>
-</div>
-
-<!-- FORSKNING -->
-<div id="research" class="section">
-    <h1>Forskningsside</h1>
-    <p>Her er hovedinnholdet ditt.</p>
-</div>
 
 <script>
 function showPage(pageId) {
@@ -147,31 +97,89 @@ function showPage(pageId) {
     document.getElementById(pageId).classList.add("active");
 }
 
+/* ÅPNE/LUKK SPRÅK */
 function toggleDropdown() {
-    document.getElementById("languageMenu").classList.toggle("show");
+    document.querySelector(".dropdown").classList.toggle("active");
 }
 
-document.addEventListener("click", function(event) {
-    let menu = document.getElementById("languageMenu");
-    let button = document.getElementById("languageButton");
+/* LUKK HVIS KLIKK UTENFOR */
+document.addEventListener("click", function(e) {
+    let dropdown = document.querySelector(".dropdown");
 
-    if (!button.contains(event.target) && !menu.contains(event.target)) {
-        menu.classList.remove("show");
+    if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("active");
     }
 });
 
+/* SPRÅK */
 function setLanguage(lang) {
+
     if (lang === "no") {
+        // 🔴 HER KODER DU NORSK
         alert("Norsk valgt");
+
+        // EKSEMPEL:
+        // document.querySelector("#home h1").innerText = "Velkommen";
     }
 
     if (lang === "en") {
+        // 🔵 HER KODER DU ENGELSK
         alert("English selected");
+
+        // EKSEMPEL:
+        // document.querySelector("#home h1").innerText = "Welcome";
     }
 
-    document.getElementById("languageMenu").classList.remove("show");
+    document.querySelector(".dropdown").classList.remove("active");
 }
 </script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a onclick="showPage('home')">Hjem</a>
+    <a onclick="showPage('creators')">Om skaperne</a>
+    <a onclick="showPage('research')">Forskningsside</a>
+
+    <div class="dropdown">
+        <a onclick="toggleDropdown()">Språk</a>
+        <div class="dropdown-content">
+            <a onclick="setLanguage('no')">Norsk</a>
+            <a onclick="setLanguage('en')">English</a>
+        </div>
+    </div>
+</div>
+
+<!-- HJEM -->
+<div id="home" class="section home active">
+
+    <!-- 👇 SKRIV HER -->
+    <h1>Velkommen til forsknings verden</h1>
+    <p>Her kan du skrive intro.</p>
+
+</div>
+
+<!-- SKAPERE -->
+<div id="creators" class="section">
+
+    <!-- 👇 SKRIV HER -->
+    <h1>Skaperne</h1>
+    <p>Alexander Von Zernichow Sponheim</p>
+    <p>Jonathan Myrberg</p>
+
+</div>
+
+<!-- FORSKNING -->
+<div id="research" class="section">
+
+    <!-- 👇 SKRIV HER -->
+    <h1>Forskning</h1>
+    <p>Her legger du inn graf og forklaring.</p>
+
+</div>
 
 </body>
 </html>
