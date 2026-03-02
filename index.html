@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Forsknings Verden</title>
- 
+
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
 }
- 
+
 /* NAVBAR */
 .navbar {
     position: fixed;
@@ -18,8 +20,9 @@ body {
     background: black;
     padding: 15px;
     text-align: center;
+    z-index: 1000;
 }
- 
+
 .navbar a {
     color: white;
     margin: 0 15px;
@@ -27,17 +30,17 @@ body {
     font-size: 18px;
     cursor: pointer;
 }
- 
+
 .navbar a:hover {
     text-decoration: underline;
 }
- 
+
 /* DROPDOWN */
 .dropdown {
     display: inline-block;
     position: relative;
 }
- 
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -45,23 +48,22 @@ body {
     top: 100%;
     left: 0;
     min-width: 120px;
- 
     opacity: 0;
     transform: translateY(-10px);
     transition: 0.3s;
 }
- 
+
 .dropdown-content a {
     display: block;
     padding: 10px;
 }
- 
+
 .dropdown-content.show {
     display: block;
     opacity: 1;
     transform: translateY(0);
 }
- 
+
 /* SEKSJONER */
 .section {
     display: none;
@@ -69,12 +71,12 @@ body {
     min-height: 100vh;
     text-align: center;
 }
- 
+
 .active {
     display: block;
 }
- 
-/* EKSTRA */
+
+/* HERO */
 .hero {
     height: 100vh;
     background-image: url("bildet.jpg"); /* 👈 BYTT TIL DITT BILDE */
@@ -86,17 +88,46 @@ body {
     justify-content: center;
     font-size: 40px;
 }
+
+/* Section styling */
+.section h1 {
+    font-size: 36px;
+}
+
+.section h2 {
+    font-size: 28px;
+    margin-top: 40px;
+}
+
+.section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+.section img {
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.footer {
+    margin-top: 50px;
+    font-style: italic;
+}
 </style>
 </head>
- 
+
 <body>
- 
+
 <!-- NAVBAR -->
 <div class="navbar">
     <a onclick="showPage('home')">Hjem</a>
     <a onclick="showPage('about')">Om skaperne</a>
     <a onclick="showPage('research')">Forskningsside</a>
- 
+
     <div class="dropdown">
         <a id="languageButton" onclick="toggleDropdown()">Språk</a>
         <div class="dropdown-content" id="languageMenu">
@@ -105,179 +136,88 @@ body {
         </div>
     </div>
 </div>
- 
+
 <!-- HJEM -->
 <div id="home" class="section active">
     <div class="hero">
         Velkommen til forsknings verden
     </div>
- 
     <h2>Her kan du skrive tekst 👇</h2>
     <p>Dette er stedet du kan legge inn hva du vil.</p>
 </div>
- 
+
 <!-- OM SKAPERNE -->
 <div id="about" class="section">
     <h1>Skaperne</h1>
     <p>Skriv om deg selv her.</p>
 </div>
- 
+
 <!-- FORSKNING -->
 <div id="research" class="section">
     <h1>Utvikling av mennesker og datamaskiner</h1>
-    <p><style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: white;
-            line-height: 1.6;
-        }
- 
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-        }
- 
-        img {
-            width: 90%;
-            max-width: 800px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
- 
-        h1 {
-            font-size: 36px;
-        }
- 
-        h2 {
-            margin-top: 40px;
-            font-size: 28px;
-        }
- 
-        p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 20px auto;
-        }
- 
-        .footer {
-            margin-top: 50px;
-            font-style: italic;
-        }
-</style>
-</head>
-<body>
- 
-<!-- INTRO -->
-<div class="section">
-<h1>Utviklingen av mennesker og datamaskiner</h1>
- 
     <p>
         Utviklingen av intelligens har skjedd på to helt forskjellige måter:
         biologisk gjennom evolusjon, og teknologisk gjennom datamaskiner.
-</p>
- 
+    </p>
     <p>
         Det er viktig å merke seg at menneskelig utvikling ikke starter fra det første mennesket,
         men fra pattedyrene, som gradvis utviklet seg over millioner av år.
-</p>
-</div>
- 
-<!-- MENNESKER -->
-<div class="section">
-<h2>Menneskelig utvikling</h2>
- 
+    </p>
+
+    <h2>Menneskelig utvikling</h2>
     <img src="desmos-graph (10).png" alt="Utvikling av mennesker">
- 
     <p>
         Denne grafen viser utviklingen av intelligens hos mennesker over svært lang tid.
         X-aksen representerer millioner av år, hvor 1 enhet tilsvarer 1 000 000 år.
-</p>
- 
-    <p>
-        Kurven er relativt flat, noe som viser at utviklingen skjer sakte og gradvis.
-        Dette skyldes biologisk evolusjon, som tar ekstremt lang tid.
-</p>
-</div>
- 
-<!-- DATAMASKINER -->
-<div class="section">
-<h2>Utvikling av datamaskiner</h2>
- 
+    </p>
+
+    <h2>Utvikling av datamaskiner</h2>
     <img src="desmos-graph (9).png" alt="Utvikling av datamaskiner">
- 
     <p>
         Denne grafen viser utviklingen av datakraft over tid.
         Y-aksen måles i gigaflops, som betyr milliarder av beregninger per sekund.
-</p>
- 
-    <p>
-        Her ser vi en eksponentiell vekst, hvor utviklingen går ekstremt raskt.
-        På kort tid øker datakraften dramatisk sammenlignet med biologisk utvikling.
-</p>
-</div>
- 
-<!-- SAMMENLIGNING -->
-<div class="section">
-<h2>Sammenligning</h2>
- 
+    </p>
+
+    <h2>Sammenligning</h2>
     <img src="IMG_4280.jpeg" alt="Sammenligning">
- 
     <p>
-        I denne grafen ser vi en direkte sammenligning mellom mennesker og datamaskiner.
         Den blå linjen representerer menneskelig utvikling, mens den røde linjen representerer datamaskiner.
-</p>
- 
-    <p>
-        Den blå kurven er relativt flat, noe som viser langsom utvikling over millioner av år.
-        Den røde kurven stiger bratt, noe som viser eksponentiell vekst i datakraft.
-</p>
- 
+    </p>
     <p>
         Dette viser at kunstig intelligens allerede har nådd et nivå hvor den kan konkurrere med,
         og på enkelte områder overgå, menneskelig kapasitet.
-</p>
- 
+    </p>
+
     <div class="footer">
         forskning utført av Alexander Von Zernichow Sponheim og Jonathan Myrberg
+    </div>
 </div>
-</div></p>
-</div>
- 
+
 <script>
 function showPage(pageId) {
     let sections = document.querySelectorAll(".section");
     sections.forEach(sec => sec.classList.remove("active"));
- 
     document.getElementById(pageId).classList.add("active");
 }
- 
+
 function toggleDropdown() {
     document.getElementById("languageMenu").classList.toggle("show");
 }
- 
+
 document.addEventListener("click", function(event) {
     let menu = document.getElementById("languageMenu");
     let button = document.getElementById("languageButton");
- 
     if (!button.contains(event.target) && !menu.contains(event.target)) {
         menu.classList.remove("show");
     }
 });
- 
+
 function setLanguage(lang) {
-    if (lang === "no") {
-        alert("Norsk valgt");
-    }
- 
-    if (lang === "en") {
-        alert("English selected");
-    }
- 
+    if (lang === "no") alert("Norsk valgt");
+    if (lang === "en") alert("English selected");
     document.getElementById("languageMenu").classList.remove("show");
 }
 </script>
- 
+
 </body>
 </html>
